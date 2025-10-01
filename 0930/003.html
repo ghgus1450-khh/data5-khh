@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+
+    <script>
+        //BMI 계산기 만들기
+        //height 키, weight 몸무게
+        let height = 1.6 , weight = 50;
+        let BMI = weight / (height * height);
+
+        console.log(`BMI : ${BMI}`);
+
+
+        //숫자 문자열 더하기
+        let num1 = "10", num2 = "20";
+
+        console.log(num1 + num2);
+        // 문자열 상태에서는 더하기 연산이 아니라 합치기
+        // 그래서 문자열을 더하기 연산이 가능한 숫자로 변환을 해야한다
+        // 문자열 -> 숫자 변환 (Number(), parseInt(), pareFloat() )
+
+        console.log(parseInt(num1) + parseInt(num2)); //Number와 parseInt를 섞어줘도 된다
+
+
+        // DW아카데미의 반마다의 수강생 수 
+        // 데이터시각화 10명, 메타버스 20명, AI 16명, 백엔드 개발 21명
+
+        let dt = 10, meta = 20, AI = 16, back = 21;
+        let stu = dt + meta + AI + back;
+
+        console.log(`데이타시각화 : ${dt} 명 메타버스 : ${meta} 명 AI : ${AI} 명 백엔드 : ${back} 명`);
+        console.log(`총 수강생 : ${stu} 명`);
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+    //let 과 var 의 차이점 
+
+    let num1 = 10;
+    var num2 = 30;
+    console.log(num1);
+    console.log(num2);
+
+    //여기까지 동일
+    num1 = 50;
+    num2 = 70; //데이터 변경 가능
+
+    // let num1 = 100; 재선언하면 작동이 안 된다
+    var num2 = 200;
+    console.log(num1);
+    console.log(num2);
+
+    // var 은 재선언이 가능하지만 let은 재선언이 불가능 
+    // var 이 재선언이 가능한 만큼 코드 오류의 위험도가 높음 (가급적 사용 지양)
+
+
+    //let(변수) 과 const(상수) 차이
+    let a = 10;
+    a = 20; //데이터 변경 가능
+
+    const b = 30;
+    // b = 40; 에러 발생(데이터 변경 불가)
+
+    //공통점 : 메모리에 데이터를 저장할 수 있도록 저장공간을 확보
+    //차이점 : 변수 - 같은 타입의 데이터를 지속적으로 변경하여 저장 가능
+    //        상수 - 메모링 생성되면 그 공간 데이터는 변경하여 저장 불가능
+
+
+    // 자료형
+
+    let num = 10;  //Number - 모든 숫자 (정수, 실수)
+    let text = "안녕하세요"; //String - 문자열
+    let Flag = true; // Boolean - true / false 참 / 거짓
+    let empty = null; //null 아무 데이터도 아닌 값 (비어있음)
+    let unknown; //undefined (값을 안 넣었음)
+
+    console.log(typeof num); //Number
+    console.log(typeof text); //String
+    console.log(typeof flag); // Boolean
+    console.log(typeof empty);  //object
+    console.log(typeof unknown); //undefined
+
+</script>

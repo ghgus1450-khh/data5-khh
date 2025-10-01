@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        // 조건 연산자
+        // 기준을 먼저 찾는게 중요 , 비교연산자를 잘 생각하여 조건을 작성
+        // 놀이동산 바이킹을 타는데 키가 140 이상만 가능하다
+        let tall = 167;
+        const result = tall >= 140 ? "탑승가능" : "탑승불가"; //대입 연산자 제외 모든 연산자 가능, 참/거짓 두가자만 가능(추가가 안 된다)
+
+        //const 는 변하지 않는 변수를 담고 다른 개발자가 건들지 말라는 뜻으로도 사용 
+        console.log(result);
+        
+        // 동전 앞면 뒷면
+        // 1이면 앞, 2은 뒷면
+        let coin = 1;
+        let res = (coin === 1) ? "잎면" : "뒷면" ;
+        console.log(res);
+
+
+
+        // 장바구니 합계 계산
+        // item1 12000, item2 3500, item3 8000, 물건값 cost
+        // 기준 = 총합이 20000 이상이냐 아니냐
+
+        let item1 = 12000, item2 = 3500, item3 = 8000;
+        let items = item1 + item2 + item3;
+        const cost = (items >= 20000) ? "무료배송" : "배송비 3000원 추가";
+        console.log(cost);
+
+        // 위에 있는 res 변수를 가져다써도 상관없다
+        // result는 불가능 - const이라서..
+        
+        
+        //짝수/홀수 판별기
+        let num = parseInt(Math.random() * 10) + 1; //무작위의 값이 나온다 10을 곱해주면 정수값이 생긴다 // + 1을 하면 1부터 시작한다  //parseInt를 쓰면 정수만 출력된다
+        console.log(num);
+
+        res = (num % 2) === 1 ? "홀수" : "짝수"; //숫자에 2를 나눴을 때 나머지값 1이 나오면 홀수, 나오지 않는다면 짝수
+        console.log(res);
+
+
+        // 문자열 함수
+        let word = "I like banana";
+
+        // 백틱 (탬플릿 문자열)
+        console.log( `너는 어떤 과일을 "좋아하니?" ${word}`);
+
+        // 문자열 길이(lenght)
+        console.log(word.length); // lenght : 문자의 길이를 나타내겠다 
+
+        // 첫 글자 추출
+        console.log( word[0]);
+        console.log(word.charAt(4)); // charAt : 문자 하나만 빼오겠다 
+
+        //문자열 거꾸로
+        console.log(word.split(" ")); //split : 문자열 분리 역할 (기준이 있어야 나눠준다)
+        console.log(word.split("").reverse().join("")); // reverse : 반대로, 배열 구조에서만 가능 //join : 나눠진 데이터를 연결시켜주겠다(기준이 있어야 합쳐진다)
+
+
+
+        //문자열 다루기 심화
+        //fullName = 홍길동
+
+        let fullName = "홍길동";
+
+        console.log(`안녕하세요, 저는 ${fullName} 입니다.`);
+
+        console.log(fullName.length);
+
+        console.log(fullName[0]);
+        console.log(fullName.charAt(0));
+
+        console.log(fullName.split("").reverse().join(""));
+
+
+        //name = 이순신
+        let name = "이순신";
+        document.write(`안녕하세요! 저는 <b style="color:#333; font-size:26px;">${name}</b> 입니다. <br>`); //docmunt.write : 화면에 표시되게 해주는 함수
+
+        document.write(`문자열의 길이 -> <b style="color:#333; font-size:26px;">${name.length}</b> <br>`);
+
+        document.writeln(`성은 <b style="color:#333; font-size:26px;">${name.charAt(0) + "씨"}</b> 입니다.`); //writeln 은 엔터문자가 들어가지는 함수(차이점이 별로 없다)
+        document.writeln("aa");
+        document.writeln("aa <br>");
+
+        document.write(`거꾸로는 <b style="color:#333; font-size:26px;">${name.split("").reverse().join("")}</b>`);
+
+      
+        // 3과목 성적구하기 (총점, 평균)
+        //함수를 사용하지 않을 때
+        
+        // 홍길동 학생의 성적 구하기
+        let Kor = 45, Mat = 68, Eng = 92, his = 77, sci = 99;
+        let total = Kor + Mat + Eng +  his + sci;
+
+        // 이순신 학생의 성적 구하기
+        kor = 65, Mat = 44, Eng = 88;
+        total = Kor + Mat + Eng;
+
+        // 박문수 학생의 성적 구하기
+        kor = 61, Mat = 66, Eng = 18;
+        total = Kor + Mat + Eng;
+
+        // 함수로 사용하지 않을 경우 일일히 변경해야한다
+        // 함수로 할 경우 한번만 수정 가능 (시간 단축, 재사용 가능, 코드 간결, 코드 독립적)
+
+
+    </script>
+
+
+
+</head>
+<body>
+    
+</body>
+</html>

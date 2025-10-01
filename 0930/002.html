@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 자바스크립트 영역
+        var num1 = 20;
+        num1 = 40;
+        var num1 = 50;
+        // var : 재선언 가능, 데이터 변경 가능, 코드 오류 위험, 사용 지양
+
+        let num2 = 40;
+        num2 = 59;
+        // let num2 = 60; 재선언 오류(불가능), 데이터 변경 가능, 가장 많이 쓰임
+
+        const pi = 3.14;
+        // pi = 3.16; 데이터 변경 불가능, 상수(읽기만 가능)
+
+        console.log(num1);
+        console.log(num2);
+        console.log(pi);
+        // console 창에 보여짐
+
+        // 사각형의 밑변과 높이를 계산하여 넓이를 구하세요
+        // 밑변은 45, 높이는 30
+        // console.log로 출력
+
+        // let width = 45;
+        // let height = 30;
+
+        // console.log(width * height);
+
+        // let text = "넓이값 :" //string
+        // let num = width * height;
+        // console.log(text);
+        // console.log(num);
+
+
+        //풀이
+
+        let width = 45, height = 30;
+        let area = width * height; //넓이 area
+
+        console.log('밑변 : '+ width + '높이 : '+ height + '넓이 : '+ area); // 일반적인 문자열 
+        console.log(`밑변 : ${width} 높이 : ${height} 넓이 : ${area}`); // `` 백틱을 사용 권장 
+
+        // 국어 45점 수학 68점 영어 92점
+        // 3과목의 총점을 계산하여 출력하세요
+        // Korean, Math, English
+
+        let Kor = 45, Mat = 68, Eng = 92; //변수명 최대한 짧게 해주기
+        let total = Kor + Mat + Eng; //총점 total
+
+        console.log(`국어 ${Kor} 점 + 수학 ${Mat} 점 + 영어 ${Eng} 점 `); //백틱 이용
+        console.log(`= 총 ${total} 점`);
+
+        let temp = "100";
+        console.log(temp + 55); //10055로 나옴
+        console.log(Number(temp) + 55); // Number로 숫자로 바꾸어 155로 나옴
+        temp = "100asd";
+        // console.log( Number(temp) + 22); //숫자로 변환할 수 없는 문자가 있어 오류가 나옴 - 객체 (Number)
+        console.log( parseInt(temp) + 22); //문자를 제외한 숫자형 문자를 숫자로 변환해줌 (parseInt)
+
+        temp = "a100fff";
+        //console.log( parseInt(temp) + 11); //숫자열 문자가 맨 앞에 있어야만 변환해준다 (첫 문장이 문자면 변환이 안 됨)
+
+        let num = 200;
+        let str = String(num); //숫자를 문자열로 변환해준다 - 객체 (String)
+        let word = num.toString(); //데이터에 들어있는 숫자를 문자열로 변환해준다 -자바스크립트 프로토타입 함수(어떤걸 가지고 있든없든) (toString)
+        // 예시 : 0이 앞에 들어간 숫자일 경우 0은 숫자로 표시가 안 되기 때문에 문자열로 바꿔준다(휴대번호 등)
+
+        Boolean( 0 ); //false
+        Boolean( NaN ); //false 
+        // 0, NaN , "", null, undefined 일 경우를 제외하고는 true 
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

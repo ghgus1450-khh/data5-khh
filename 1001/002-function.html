@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script>
+
+        // 함수
+        function sum(a , b){ //매개변수를 지정
+            document.write(`더하기 ${a + b} <br>`);
+        }   // 함수의 정의
+
+        // sum(10, 20); // 함수 호출 - 실행
+        // sum(44, 66); //매개변수 값 입력
+        // sum(80, 2);
+
+        //두 정수의 곱하기 결과를 출력하는 함수를 만들어서 실행 해보세요
+        // 변수명을 직관적으로 알아볼 수 있게 정해주기
+        
+        function num(a,b){
+            document.write(`곱하기 : <b style="color:pink; font-size:20px;"> ${a * b} </b> <br>`); //document.write는 위로 덮어버리기 때문에 사용을 잘 하지 않는다
+        } 
+
+        // num(20,6);
+        // num(86,12);
+        // num(4,9);
+
+        //매개변수 있는 함수는 꼭 매개변수를 넣어야 실행
+        //매개변수가 없으면 그냥 실행됨
+
+        function calc(){
+            // document.write("잘됨");
+            let num1 = document.getElementById("num1").value; //document.getElementById : 문서에서 해당 id를 가져오는 명령어 함수
+            let num2 = document.getElementById("num2").value;
+            console.log(`${num1} , ${num2}`);
+
+            let res = parseInt(num1) + Number(num2);
+
+            document.getElementById("result").innerText = res; //innerHTML : 태그 동작 시킬 때, innerText : 글자만 가져올 때
+
+        }
+
+
+        //함수 표현식
+
+        // mul2(10,2); 오류
+        const mul2 = function(a,b){
+            document.write(a*b);
+        } // 이름이 없는 함수 : 변수를 선언하기 때문에 매개변수가 위로 가면 선언이 안 된 상태이기에 오류가 나타난다
+
+        mul2(10,2);
+
+        //화살표 함수 : 리엑트에서의 함수 방식 , 위치 생각
+        const mul3 = (a,b) => {document.write(a*b);}
+        mul3(10,2);
+              
+        //전역 변수 : 모든 공간에서 사용 가능(제약 없음)
+        let age = 20; 
+        let name = "이방원"
+        console.log( age );
+        let birth = 20020315;
+
+        function temp(){ // 중괄호에 의해 영역 분리 , 분리된 함수 안에서는 같은 변수 선언 가능
+            let age = 10; // 지역변수 : 중괄호 안에서만 사용 가능, 외부로는 적용 안 됨  
+            let name = "이성계"
+            console.log(`함수 내부 age : ${age} ${birth}`); // 함수 안에 전역 변수를 가져올 수 있음
+        }
+
+        temp();
+        console.log( age );
+        console.log(name);
+
+    </script> 
+</head>
+<body>
+    
+    <button type="button" onclick="sum(60,50)"> 더하기 </button> <br> <!-- body에 이벤트를 줄 때 on 사용 -->
+    <button type="button" onclick="num(80,10);"> 곱하기</button>
+
+    <div>
+        <a href="javascript:calc();">더하기 계산</a>
+        <input type="number" id="num1">
+        <input type="number" id="num2">
+    </div>
+    
+    <div id="result"></div>
+    
+    <!-- ul#list>li.menu*5 --> <!-- 이런식으로 만들 수 있음 -->
+    <!-- <ul id="list">
+        <li class="menu"></li>
+        <li class="menu"></li>
+        <li class="menu"></li>
+        <li class="menu"></li>
+        <li class="menu"></li>
+    </ul> -->
+
+    
+</body>
+</html>

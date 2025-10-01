@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 10px 4px;}
+        input{display: block; height: 25px;}
+        #result{width: 100px; height: 50px; border-top:1px solid #ccc; border-bottom:1px solid #ccc;}
+        #result2{width: 100px; height: 50px; border-top:1px solid #ccc; border-bottom:1px solid #ccc;}
+        #result3{width: 100px; height: 50px; border-top:1px solid #ccc; border-bottom:1px solid #ccc;}
+    </style>
+    <script>
+        
+        function print(text){
+            document.write(`<div>${text}</div>`); //전체 프린트 설정
+        }
+
+        // 사각형의 너비와 높이를 계산하여 넓이를 구하여 출력하는 함수
+        // 함수명 : rectArea
+        // 매개변수 2개 height, width
+
+        function rectArea(w,h){
+            print(`넓이:${ w * h}`);
+        }
+
+        rectArea(65,50);
+
+        function rectArea2(){
+           let w = document.getElementById("width").value;
+           let h = document.getElementById("height").value;
+
+           let res = w * h;
+
+           document.getElementById("result").innerText = res;
+        }
+
+        // 3과목 (국어, 수학, 영어)의 총점과 평균을 구하여 출력하는 함수
+        // 함수명 : garde
+        // 매개변수 3개
+
+        function garde(kor,mat,eng){
+            let total = kor + mat + eng;
+            let num = total / 3;
+
+            print(`총점 : ${total} 점 ,  평균 : ${parseInt(num)} 점`);
+        }
+
+        garde(65,25,40);
+
+        
+        function garde2(){
+            let kor = document.getElementById("kor").value;
+            let mat = document.getElementById("mat").value;
+            let eng = document.getElementById("eng").value;
+
+            let total = parseInt(kor) + parseInt(mat) + parseInt(eng) ;
+            let num = parseInt(total / 3);
+
+            document.getElementById("result2").innerHTML = total;
+            document.getElementById("result3").innerText = num;
+        }
+
+        // 아래의 코드를 작성하고 올바르게 실행 될 수 있게 함수를 만들어보세요 !
+
+        function hi(a){
+            print(`안녕, <b style="font-size:20px;"> ${a} ! </b>`);
+        }
+
+        hi("이순신"); // 화면 출력은 안녕, 이순신! 
+        hi("김정원"); // 화면 출력은 안녕, 김정원!
+        hi("박승찬"); // 화면 출력은 안녕, 박승찬!
+
+        
+    </script>
+</head>
+<body>
+    <div>
+        <input type="number" id="width" placeholder="넓이를 입력">
+        <input type="number" id="height" placeholder="높이를 입력">
+        <a href="javascript:rectArea2();">넓이값</a>
+    </div>
+
+    <div id="result"></div>
+
+    <div>
+        <input type="number" id="kor" placeholder="국어점수">
+        <input type="number" id="mat" placeholder="수학점수">
+        <input type="number" id="eng" placeholder="영어점수">
+        <a href="javascript:garde2();">점수합산</a>
+    </div>
+    <div id="result2"></div>
+    <div id="result3"></div>
+</body>
+</html>
