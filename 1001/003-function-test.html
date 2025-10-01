@@ -27,14 +27,14 @@
 
         rectArea(65,50);
 
-        function rectArea2(){
-           let w = document.getElementById("width").value;
-           let h = document.getElementById("height").value;
+        // function rectArea2(){
+        //    let w = document.getElementById("width").value;
+        //    let h = document.getElementById("height").value;
 
-           let res = w * h;
+        //    let res = w * h;
 
-           document.getElementById("result").innerText = res;
-        }
+        //    document.getElementById("result").innerText = res;
+        // }
 
         // 3과목 (국어, 수학, 영어)의 총점과 평균을 구하여 출력하는 함수
         // 함수명 : garde
@@ -50,17 +50,17 @@
         garde(65,25,40);
 
         
-        function garde2(){
-            let kor = document.getElementById("kor").value;
-            let mat = document.getElementById("mat").value;
-            let eng = document.getElementById("eng").value;
+        // function garde2(){
+        //     let kor = document.getElementById("kor").value;
+        //     let mat = document.getElementById("mat").value;
+        //     let eng = document.getElementById("eng").value;
 
-            let total = parseInt(kor) + parseInt(mat) + parseInt(eng) ;
-            let num = parseInt(total / 3);
+        //     let total = parseInt(kor) + parseInt(mat) + parseInt(eng) ;
+        //     let num = parseInt(total / 3);
 
-            document.getElementById("result2").innerHTML = total;
-            document.getElementById("result3").innerText = num;
-        }
+        //     document.getElementById("result2").innerHTML = total;
+        //     document.getElementById("result3").innerText = num;
+        // }
 
         // 아래의 코드를 작성하고 올바르게 실행 될 수 있게 함수를 만들어보세요 !
 
@@ -72,11 +72,44 @@
         hi("김정원"); // 화면 출력은 안녕, 김정원!
         hi("박승찬"); // 화면 출력은 안녕, 박승찬!
 
-        
+        function start(){
+            document.write("가위바위보를 시작합니다.");
+            let user = parseInt( Math.random() * 3) + 1; //1은 가위 2는 바위 3은 보로 표시
+            let com = parseInt(Math.random()*3)+1;
+
+            // 유저와 컴퓨터가 각각 가위,바위,보 중 무엇을 내었는지 출력 함수 수행
+            chack(user);
+            chack(com);
+
+            //결과 룰 확인 - 유저 기준에서 승, 패, 무 출력
+            result(user , com);
+        }
+
+        function result(){
+            let res ="패";
+
+            if (u===c) {
+                res = "비김";
+            } else if ((u===1 && c===3) || (u===2 && c===1) || (u===3 && c===2));{
+                res = "승";
+            }
+
+            document.write();
+            
+        }
+
+        function chack( player ){ // 가위바위보 문자열로 출력
+            let user = player === 1 ? "가위" : player === 2 ? "바위" : "보";
+
+            document.write(`유저 : ${user}  컴퓨터 : ${com}`);
+        }
+
+        start();
+
     </script>
 </head>
 <body>
-    <div>
+    <!-- <div>
         <input type="number" id="width" placeholder="넓이를 입력">
         <input type="number" id="height" placeholder="높이를 입력">
         <a href="javascript:rectArea2();">넓이값</a>
@@ -91,6 +124,8 @@
         <a href="javascript:garde2();">점수합산</a>
     </div>
     <div id="result2"></div>
-    <div id="result3"></div>
+    <div id="result3"></div> -->
+
+    <div id="result"></div>
 </body>
 </html>
