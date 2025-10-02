@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체</title>
+    <script>
+        // 객체 = 키(key) : 값(value)
+        // 객체를 사용하면 좋은점
+        // 많은 양의 데이터를 구분하여 저장하기 좋다.
+        // 키(key)에 따라 원하는 값 사용하기 편하다.
+        // 검색에 용이하다
+        
+        // name은 key에 해당되고 강하현은 value에 해당한다
+        let dog = { name : "강하현" , breed : "시츄" , age : 11 };
+        console.log( dog["name"] ); // 첫번째 방법 : 대괄호 활용 , 변수[ "키 이름" ] , 키를 문자열로 표현해야한다
+        console.log( dog.name); // 두번째 방법 : 점(.) 활용 , 변수.키 이름 ,  키를 그대로 표현한다
+
+        dog.gender = "수컷"; dog.name = "하현이"; // 객체의 데이터를 추가/변경하는 방법
+
+        console.log(dog.gender , dog.name);
+
+        delete dog.gender; // 객체의 데이터 삭제
+
+        console.log(dog.gender); // 데이터 삭제로 찾을 수 없다는 오류뜸
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
