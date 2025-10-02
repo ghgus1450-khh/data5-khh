@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* *{margin-bottom: 6px;} */
+        #test input{display: block; height: 20px;}
+        #test a{padding:2px; color: #333; text-decoration: none; border: 1px solid #333; width: 60px; display: block;}
+        #test h4{font-weight: normal; border-bottom: 2px solid #333; width: 200px; padding-bottom: 6px; }
+
+        #wrap{width: 500px; margin: 50px auto;}
+        #wrap .input-field{display: flex; flex-direction: column; row-gap: 10px; }
+        .input-field input{outline: none; padding: 5px 10px; font-size:20px;}
+        .bt{margin: 15px 0;}
+
+    </style>
+
+
+    <script>
+
+        // input으로부터 이름과 나이를 입력하고 가져오기
+        // 이름과 나이를 출력하기
+        // 위 내용을 동작하는 함수 만들기
+        // "내정보" 버튼 클릭하면 실행
+
+        function pro(){
+            let name = document.getElementById("name1").value;
+            let num = document.getElementById("num").value;
+
+            console.log(`이름 : ${name} , 나이 : ${num}`);
+
+            let res = (`이름 : ${name} <br> 나이 : ${num}`);
+
+            document.getElementById("result1").innerHTML = res;
+
+        }
+
+        // 풀이
+        function info(){
+            let name = document.getElementById("name").value;
+            let age = document.getElementById("age").value;
+
+            const res = `이름 : ${name} , 나이 : ${age}`;
+
+            document.getElementById("result").innerText = res;
+        }
+
+
+
+    </script>
+</head>
+<body>
+
+    <div id="test">
+        <input type="text" id="name1" placeholder="이름을 입력하세요">
+        <input type="number" id="num" placeholder="나이를 입력하세요">
+        <a href="javascript:pro();">내 정보</a>
+    </div>
+    
+    <h4>정보가 들어갑니다</h4>
+    <div id="result1"></div>
+
+    <!-- 풀이 -->
+
+    <div id="wrap">
+        <div class="input-field">
+            <label for="name">이름</label>
+            <input type="text" id="name">
+            <label for="age">나이</label>
+            <input type="number" id="age">
+        </div>
+        <div class="bt">
+            <button type="button" onclick="info()">내정보</button>
+        </div>
+        <div id="result"></div>
+    </div>
+</body>
+</html>

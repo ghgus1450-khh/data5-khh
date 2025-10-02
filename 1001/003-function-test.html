@@ -7,7 +7,7 @@
     <style>
         *{margin: 10px 4px;}
         input{display: block; height: 25px;}
-        #result{width: 100px; height: 50px; border-top:1px solid #ccc; border-bottom:1px solid #ccc;}
+        #result{width: 100px; height: 50px; border-top:1px solid #ccc;}
     </style>
     <script>
         
@@ -86,8 +86,8 @@
 
             // 유저와 컴퓨터가 각각 가위,바위, 보 중  무엇을 내었는지 출력 함수 실행
 
-            check1(user);
-            check2(com);
+            check(user,  "유저"); //매개변수를 추가 시켜주기
+            check(com, "컴퓨터");
 
             // 결과 를 확인 -  유저 기준에서 승, 패, 무 출력
             result( user, com );
@@ -104,15 +104,10 @@
 
         }
 
-        function check1( player ){  // 가위바위보 문자열로 출력
+        function check( player, who ){  // 가위바위보 문자열로 출력
             let word = player === 1 ? "가위" : player === 2 ? "바위" : "보";
 
-            print2(`유저 : <b style=" color:lightblue;"> ${word} </b> <br>`);
-        }
-        function check2( player ){ 
-            let word = player === 1 ? "가위" : player === 2 ? "바위" : "보";
-
-            print2(`컴퓨터 : <b style="color:pink;"> ${word} </b> <br>`);
+            print2(`${who} : <b> ${word} </b> <br>`);
         }
 
 
