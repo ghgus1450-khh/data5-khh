@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <!--  div.info*7   -->
+    <div class="info"></div>
+    <div class="info"></div>
+    <div class="info"></div>
+    <div class="info"></div>
+    <div class="info"></div>
+    <div class="info"></div>
+    <div class="info"></div>
+
+</body>
+</html>
+<script src="./testData1.json" type="text/javascript"></script>
+<script>
+    let info = document.getElementsByClassName("info");
+    const std = JSON.parse(JSON.stringify(data));
+
+    info[0].innerHTML=`이름 : ${std.name}`;
+    info[1].innerHTML = `C언어 : ${std.clanguage}`;
+    info[2].innerHTML = `자바 : ${std.java}`;
+    info[3].innerHTML = `네트워크 : ${std.network}`;
+    info[4].innerHTML = `데이터베이스 : ${std.database}`;
+    info[5].innerHTML = `학번 : ${std.stdNumber}`;
+    info[6].innerHTML = `학과 : ${std.dept}`;
+
+
+    /*
+
+        연휴 동안 공부도 했으니  이번 주말에는 
+        한번더  과제~
+
+        과제 .
+         가위 바위 보를 만들어 오세요.
+
+         (가위 바위 보  이미지 사용 해서   이미지 클릭 하여 가위바위 보 게임 
+         할 수 있게!!)
+
+    */
+
+</script>

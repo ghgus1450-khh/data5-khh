@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        // 객체 - 특정 대상을 표현 하는 복합 데이터 구조
+        // 자동차 라는 객체 
+        // 엔진 , 타이어, 시트, 냉각장치 등등등 
+        // 제조사 : "현대"  ,  자동차이름 : "쏘나타" , 엔진 : "3000cc"
+        // 제조사 : "현대"  ,  자동차이름 : "아반테"  , 엔진 : "1600cc" 
+
+        // 객체 다루기
+        //  배경색, 글자색, 글자 크기
+        const div = {bgcolor : "pink" , ftcolor : "white" , size : 20};
+        
+        const h1 = {bgcolor : "blue" , ftcolor : "yellow" , size : 15 };
+
+//  let divBgcolor ,  divFtcolor, divSize 
+
+        window.onload = function(){
+            let obj1 = document.getElementById("obj1"); // div 태그
+            // let obj = document.querySelectorAll("div");
+            // console.log(obj);
+            obj1.style.background = div.bgcolor;
+            obj1.style.color = div.ftcolor;
+            obj1.style.fontSize = div.size+"px";
+
+            let obj2 = document.querySelector("#obj2");
+            obj2.style.background = h1.bgcolor;
+            obj2.style.color = h1.ftcolor;
+            obj2.style.fontSize = h1.size+"px";
+
+            // div와 h1 클릭이벤트 등록
+            obj1.addEventListener("click" , change );
+            obj2.addEventListener("click" , change );
+
+        }
+
+        function change(obj){
+        //    this.style.fontSize = "30px";
+            const mySet = select();  // 배경색, 글자색, 글자크기 의 설정 값 가져오기
+            // const mySet = { bgcolor , ftcolor, size };
+            // const mySet = { bgcolor:배경색선택value, ftcolor:글자색value,  size: select의 value}
+            this.style.background = mySet.bgcolor;
+            this.style.color = mySet.ftcolor;
+            this.style.fontSize = mySet.size + "px";   
+            
+            const ob = JSON.stringify(mySet); // 객체를 JSON으로
+            JSON.parse( ob ); // JSON을 객체로
+
+        }
+        function select( ){
+            const bgcolor = document.querySelector("#back").value;
+            const ftcolor = document.querySelector("#font").value;
+            const size = document.querySelector("#size").value;
+            return { bgcolor , ftcolor, size };
+        }
+        
+    </script>
+    <style>
+        
+    </style>
+
+</head>
+<body>
+    
+    <div id="obj1" style=""> 객체 테스트 용 div </div>
+    <h1 id="obj2"> 객체 테스트용 h1 </h1>
+
+    배경색<input type="color" id="back"> <br>
+    글자색 <input type="color" id="font"> <br>
+    글자크기 <select id="size">
+                <option value="10">10</option>
+                <option value="15">15</option>
+                <option value="20">20</option>
+                <option value="25">25</option>
+                <option value="30">30</option>
+                <option value="35">35</option>
+                <option value="40">40</option>
+            </select>
+
+</body>
+</html>

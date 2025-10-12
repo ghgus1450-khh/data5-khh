@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //  body 태그안에  <b id="execute">클릭해줘</b>  를 작성하고
+        // 클릭해줘 글씨를 클릭하면  
+        //  <div id="show"></div>  안에  "안녕!" 출력 되게 만드세요.
+
+        window.onload = function(){
+            const me = document.getElementById("execute"); // b 태그 가져오기
+            me.addEventListener( 'click' ,function(){  // b 태그에 click 이벤트 등록
+                document.getElementById("show").innerText = "안녕!";
+            });
+        }
+    </script>
+</head>
+<body>
+
+    <b id="execute">클릭해줘</b>
+    <div id="show"></div>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+ <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트발생1</title>
+
+<script>
+        // 자바스크립트 코드는 function을 제외하고는 , 순차적으로 실행된다.
+        //  body 태그 보다 위에 자바스크립트 코드가 있다면(function제외)
+        //  태그가 실행되기전에 먼저 실행 된다. 
+        // 하여  태그가 화면에 표시가 된후에 실행 시키기 위해 
+        //  window.onload 를 사용한다.  
+        //  안그러면  태그가 없는 상태에서 실행 되므로 오류 
+        
+        window.onload=function(){ // 브라우저 화면에 HTML,css 처리가 
+                                 //  끝나면 실행 -> window.onload
+            document.getElementById("output").innerText=" 잘 나오나?";
+        }
+
+        function print(){
+            //print 라는 함수가 호출(실행)되면 동작할 내용은 { } 안에 작성
+            let data = document.getElementById("data").value;
+            document.getElementById("output").innerText=data;
+        }
+    </script>
+
+</head>
+<body>
+
+    <input type="text" id="data" onkeyup="print()">
+    <div id="output"></div>
+
+
+    <!-- 
+
+        문제
+        ->  input 태그에 입력한 글자를 
+           div#output 에 출력하기   
+           ( input 태그에 키보드 입력시  keyup, keydown, keypress 이벤트 발생
+            - keyup은 키보드의 키를 누르고 손가락을 떼는 순간 발생, 
+            - keydown은 키보드의 키르 누르면 발생 ,
+            - keypress는  키보드의 키를 누르면 발생 하는 이벤트)
+        키보드의 키는 누르는 즉시 컴퓨터에서 처리 되지않음,
+        키를 누르면 어떤키인지 해당 키가 어떤값인지 알아내야 하고 그에 맞는 값을
+        화면에 출력함
+        이번 문제에 맞는 이벤트를 찾아서 해보세요.
+
+    -->
+
+
+</body>
+</html>
+</html>
+
+<script>
+ //   document.getElementById("output").innerText=" 잘 나오나?";
+
+</script>
