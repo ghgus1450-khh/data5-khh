@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TextRPG</title>
+</head>
+<body>
+    <!-- rpg.html -->
+
+    <script>
+        // 캐릭터와 몬스터 객체 생성
+        // 캐릭터 객체
+        const my = {
+            name : "기영이", 
+            hp : 100,
+            attack : 20,
+            heal(){ // 힐 스킬 (함수로 구현)
+                this.hp += 15; // 힐 함수 실행시 hp 15씩 증가
+                if(this.hp > 100) this.hp=100; // 최대치가 100 이므로 100 안 넘게 
+                log(`${this.name}이(가) 체력을 15 회복했습니다. (HP : ${this.hp})`);
+            },
+            hit(target){ // 공격 : 누구를 공격하는지 매개변수로 받기
+                log(`${this.name}의 공격`);
+                target.hp -=this.attack; // 내 공격력 만큼 몬스터 hp 감소
+                if(target.hp <0) target,hp=0; // 몬스터의 hp가 0보다 작으면 0으로 표시
+                log(`${target.name} HP : ${target.hp}`);
+            }
+        };
+
+        //몬스터 객체 -> name, hp, attack, hit 만들어보세요
+        const monster = {
+            name : "떙구",
+            hp : 150,
+            attack : 10,
+            hit(target){ 
+                log(`${this.name}의 공격`);
+                target.hp -= this.attack; // 몬스터의 공격력 만큼 내 캐릭터 hp 감소
+                if(target.hp <0) target.hp=0; // 캐릭터의 hp가 0보다 작으면 0으로 표시
+                log(`${target.name} HP : ${target.hp}`);
+            }
+        };
+
+        // 상황 출력 함수 
+        const logWrap = document.createElement("div"); // div 안에 태그 만들기
+        document.body.appendChild(logWrap); // body 태그 안에 넣기
+        function log(text){
+            const p = document.createElement("p"); // 로그 내용 담을 p 태그 만들기
+            p.textContent = text; // 로그 내용 넣기
+            logWrap.appendChild(p); // div 태그 안에 추가하기
+            logWrap.scrollTop = 4000; // 로그 div에 스크롤의 위치를 높이만큼 위치에 표시 (최대치 스크롤값을 줘야 딱 맞춰서 표현 가능하다)
+        };
+
+        // 내 캐릭터의 기술 사용 - 버튼
+        const attackBtn = document.createElement("button");
+        attackBtn.textContent="공격하기";
+        attackBtn.onclick = () => {
+            // 내 캐릭터가 몬스터를 공격하고 , 몬스터는 공격받으면 반격한다
+            if(monster.hp <= 0) return log("몬스터는 이미 쓰러졌습니다");
+            my.hit(monster); // 몬스터의 hp가 0이 아니라면 공격하기
+            if(monster.hp > 0){
+                monster.hit(my); // 캐릭터의 공격을 받고 아직 몬스터가 살아 있다면 몬스터 반격
+            }else{
+                log("승리! 땡구를 물리쳤다");
+            }
+
+        };
+
+        document.body.appendChild(attackBtn); // 내 캐릭터 공격버튼
+
+        // 내 캐릭터 힐
+        const healBtn = document.createElement("button");
+        healBtn.textContent = "회복하기";
+        healBtn.onclick = () => my.heal();
+        document.body.appendChild(healBtn);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>count</title>
+
+
+</head>
+
+<body>
+    <script>
+    // 클릭하면 숫자 증가
+        let count = 0;
+        const btn = document.createElement("button");
+        btn.textContent = `클릭:${count}`;
+        btn.onclick = () => {
+            count++;
+            btn.textContent = `클릭:${count}`;
+        };
+        document.body.appendChild(btn);
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>background</title>
+
+</head>
+
+<body>
+    <!-- background.html
+        버튼 클릭하면 body의 배경색이 랜덤하게 변경되도록 하세요
+        Math.floor(Math.random()*256);
+        ex) rgb(255,4,3); 
+    -->
+
+        <script>
+
+        // 1. 버튼 생성
+        const btn = document.createElement("button"); // createElement(); = 속성을 주는 함수
+        
+        // 2. 버튼 텍스트 넣기
+        btn.textContent = "배경색 변경";
+
+        // 3. 버튼 클릭 이벤트 등록하기 (색이 랜덤으로 바뀌도록)
+        btn.onclick = () => {
+            const r = Math.floor(Math.random() * 256);
+            const g = Math.floor(Math.random() * 256);
+            const b = Math.floor(Math.random() * 256);
+            document.body.style.background = `rgb(${r},${g},${b})`;
+        };
+
+        // 4. 이벤트 함수 작성하기(배경색 변경시키기)
+        document.body.appendChild(btn);
+
+
+    </script>
+
+</body>
+</html>

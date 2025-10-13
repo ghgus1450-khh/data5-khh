@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        alert("스크립트 테스트");
+        document.write("document 테스트");
+
+        console.log("안녕 나는 콘솔");
+        const btn = document.createElement("button"); // createElement(); = 속성을 주는 함수
+        btn.textContent = "클릭해봐";
+
+        // 바닐라 자바스크립트 : 제일 기본 자바스크립트
+        // 제이쿼리 : 자바스크립트를 좀 더 간단하게, 간결하게 액션 위주로
+        // 리엑트 : 자바스크립트에서 좀 더 간결하게 업그레이드
+
+        btn.onclick = () => alert("버튼 클릭");
+        document.body.appendChild(btn);
+
+        // function save(i,k){
+        //     let a = 10;
+        // }
+        // // 위 save 함수를 화살표 함수로
+        // const save = (i,k) => {let a=10;}
+
+        // btn.addEventLister("click", function(){
+        // alert("버튼 클릭"); }); => 바닐라 자바스크립트 방식
+    
+    </script>
+</head>
+
+<body>
+
+    <h1>react에서 테스트</h1>    
+
+</body>
+</html>

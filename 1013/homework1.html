@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가위바위보</title>
+    <link rel="stylesheet" href="./game.css">
+    <script src="./game.js"></script> <!-- 자바 외부 경로 -->
+</head>
+<body>
+    <div id="wrap">
+        <!-- 컴퓨터 가위바위보 영역 -->
+        <div id="com" class="field">
+            <div class="picBox">
+                <img id="comPic">
+            </div>
+            <h2 class="player-name">컴퓨터</h2>
+        </div>
+        <!-- 결과 영역 -->
+        <div id="result" class="field"></div>
+
+        <!-- 유저 가위바위보 영역
+        html 태그에 값(data) 저장이 가능하다
+        태그에서 데이터로 활용되는건 아니고, 스크립트나 css에서 사용할 수 있도록 되어있다
+        데이터 set 설정 방법
+            data-이름="값"
+        -->
+        <div id="user" class="field">
+            <div class="picWrap">
+                <div class="picBox">
+                    <img src="./scissors.png" id="scissors" class="userPic" data-user="1">
+                </div>
+                <div class="picBox">
+                    <img src="./rock.png" id="rock" class="userPic" data-user="2">
+                </div>
+                <div class="picBox">
+                    <img src="./paper.png" id="paper" class="userPic" data-user="3">
+                </div>
+            </div>
+            <h2 class="player-name">나</h2>
+        </div>
+    
+    </div>
+</body>
+</html>

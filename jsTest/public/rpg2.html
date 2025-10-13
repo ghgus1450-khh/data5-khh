@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TextRPG2</title>
+</head>
+<body>
+    <!-- localStorage 사용 -->
+     
+    <div id="wrap">
+        <div>
+            <button id="save">저장하기</button>
+            <button id="load">불러오기</button>
+        </div>
+        <fieldset>
+            <legend>캐릭터 생성</legend>
+            <div class="input-field">
+                <label for="">캐릭터명</label>
+                <input type="text" id="name">
+            </div>
+            <div class="input-field">
+                <label for="">직업</label>
+                <input type="text" id="job">
+            </div>
+            <div class="input-field">
+                <label for="">성별</label>
+                <input type="radio" name="gender" value="m">남자
+                <input type="radio" name="gender" value="w">여자
+            </div>
+            <div id="stat">
+                <!-- 과제 : 5개 이상 스탯을 랜덤하게 나오게 해주세요
+                 무작위 라는 버튼을 클릭하면 랜덤값으로 적용 되도록..
+                 하고 localStorage에 저장 -->
+            </div>
+        </fieldset>
+    </div>
+
+    <script>
+        const saveBtn = document.querySelector("#save");
+        saveBtn.onclick = () => {
+            let name = document.querySelector("#name").value;
+            let job = document.querySelector("#job").value;
+            let gender = document.querySelector("input[name='gender']:checked").value;
+
+            localStorage.setItem("name",name);
+            localStorage.setItem("job",job);
+            localSrorage.setItem("gender",gender);
+        }
+
+        const loadBtn = document.querySelector("#load");
+        loadBtn.onclick = () => {
+            let name = localStorage.getItem("name");
+            let job = localStorage.getItem("job");
+            let gender = localStorage.getItem("gender");
+
+            document.querySelector("#name").value = name;
+            document.querySelector("#job").value = job;
+            let radio = document.querySelector(`input[name="gender"][value="${gender}"]`);
+
+            radio.checked = true;
+        }
+
+    // input[type="radio"] , input[name="aaaa"] 이런식으로 선택 가능
+
+    </script>
+</body>
+</html>
