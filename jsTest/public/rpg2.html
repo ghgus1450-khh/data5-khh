@@ -12,6 +12,7 @@
         <div>
             <button id="save">저장하기</button>
             <button id="load">불러오기</button>
+            <!-- <button id="sb">스탯</button> -->
         </div>
         <fieldset>
             <legend>캐릭터 생성</legend>
@@ -45,7 +46,12 @@
 
             localStorage.setItem("name",name);
             localStorage.setItem("job",job);
-            localSrorage.setItem("gender",gender);
+            localStorage.setItem("gender",gender);
+            localStorage.setItem("str",statValue.strVal);
+            localStorage.setItem("dex",statValue.dexVal);
+            localStorage.setItem("agi",statValue.agiVal);
+            localStorage.setItem("con",statValue.conVal);
+            localStorage.setItem("int",statValue.intVal);
         }
 
         const loadBtn = document.querySelector("#load");
@@ -55,14 +61,75 @@
             let gender = localStorage.getItem("gender");
 
             document.querySelector("#name").value = name;
-            document.querySelector("#job").value = job;
+            documen.querySelector("#job").value = job;
             let radio = document.querySelector(`input[name="gender"][value="${gender}"]`);
+            
 
             radio.checked = true;
         }
 
     // input[type="radio"] , input[name="aaaa"] 이런식으로 선택 가능
+    
+        // const statBtn = document.querySelector("#sb");
 
+        // statBtn.onClick = () => {
+        //     let STR = "힘";
+        //     let DEX = "민첩";
+        //     let WIS = "지능";
+        //     let HP = "체력";
+        //     let CHA = "지혜";
+
+        //     const stat = ["힘", "민첩", "지능", "체력", "지혜"];
+        //     const statRandom = Math.floor(toString(Math.random()) * stat.length);
+        //     const result = stats[statRandom];
+
+        //     console.log(result);
+        // }
+
+
+        //5개 스탯 무작위 값
+        const stat = document.querySelector("#stat");
+
+        // dis#stat 에 버튼과 스탯 출력 5개 태그 넣기
+        let randomBt = document.createElement("button");
+        randomBt.textContent = "무작위스탯";
+        stat.appendChild(randomBt);
+
+        let str = document.createElement("div");
+        stat.appendChild(str);
+        let dex = document.createElement("div");
+        stat.appendChild(dex);
+        let agi = document.createElement("div");
+        stat.appendChild(agi);
+        let con = document.createElement("div");
+        stat.appendChild(con);
+        let int = document.createElement("div");
+        stat.appendChild(int);
+
+        // 스탯 값 localStorage에 저장하기 위해 객체 생성
+
+        const statValue = { strVal : 0, dexVal : 0, agiVal : 0, conVal : 0, intVal : 0 };
+
+        // 버튼 클릭하여 무작위 스탯 값 생성하기
+        randomBt.onclick = () => {
+            statValue.strVal = Math.floor(Math.random()*10)+5;
+            statValue.dexVal = Math.floor(Math.random()*10)+5;
+            statValue.agiVal = Math.floor(Math.random()*10)+5;
+            statValue.conVal = Math.floor(Math.random()*10)+5;
+            statValue.intVal = Math.floor(Math.random()*10)+5;
+
+            str.textContent = `힘 : ${statValue.strVal}`;
+            dex.textContent = `재주 : ${statValue.dexVal}`;
+            agi.textContent = `민첩 : ${statValue.agiVal}`;
+            con.textContent = `체력 : ${statValue.conVal}`;
+            int.textContent = `지능 : ${statValue.intVal}`;
+
+
+        };
+
+
+
+        
     </script>
 </body>
 </html>
