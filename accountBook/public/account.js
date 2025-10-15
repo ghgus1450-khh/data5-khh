@@ -27,14 +27,37 @@ document.querySelector("#expenseBt").onclick= function(){
 };
 
 saveBt.onclick = () => {
-    let date = document.querySelector(".date").value;
-    let expense = document.querySelector(".expense").value;
-    let income = document.querySelector(".income").value;
-    let datailCol = document.querySelector(".datail-col").value;
-    let categoryCol = document.querySelector(".category-col").value;
-    let paymentCol = document.querySelector(".payment-col").value;
 
+    let tr = document.createElement("tr");
+
+    let date = document.getElementById("useDate").value;
+    // let expense = ;
+    // let income = ;
+    let datail = document.getElementById("datail").value;
+    let category = document.querySelector("select[name='category']").value;
+    let payment = document.getElementById("payment").value;
+
+    let tdDate = document.createElement("td");
+    tdDate.textContent = date;
+
+
+    let tddatail = document.createElement("td");
+    tddatail.textContent = datail;
+
+    let tdCategory = document.createElement("td");
+    tdCategory.textContent = category;
+
+    let tdPatment = document.createElement("td");
+    tdPatment.textContent = payment;
+
+    tr.appendChild(tdDate);
+    // tr.appendChild(tdExpense);
+    tr.appendChild(tdDetail);
+    tr.appendChild(tdCategory);
+    tr.appendChild(tdPatment);
     
+    
+    document.querySelector(".list").appendChild(tr); 
 };
 
 
