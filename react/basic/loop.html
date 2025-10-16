@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        // 증가 감소 연산자 : ++,-- 하나씩 증가
+        let count=0;
+        let weight=70;
+        while(weight>50){
+            active = parseInt(prompt("운동시간"));
+            weight -= active;
+
+            // alert("몸무게 :"+weight);
+            food = parseInt(prompt("식사량"));
+            weight += food;
+
+            // count = count + 2; => 2 이상의 값을 증가할 때 사용
+            count++;
+            console.log("몸무게 :"+weight);
+        }
+        console.log(count+"일만에 다이어트 끝!");
+        alert(count+"일만에 다이어트 끝!");
+
+    </script>
+</body>
+</html>

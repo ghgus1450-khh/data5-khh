@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>랜덤루프</title>
+</head>
+<body>
+    <script>
+        
+        // 증가 감소 연산자 : ++,-- 하나씩 증가
+        let count=0;
+        let weight=70;
+        const min=10;
+        const max=20;
+        let activel;
+
+        while(weight>50){
+            let active = Math.floor(Math.random()*(max-min)+min);
+            weight -= active;
+
+            console.log("몸무게1 :"+weight);
+
+            let food = Math.floor(Math.random()*5+1);
+            weight += food;
+
+            // count = count + 2; => 2 이상의 값을 증가할 때 사용
+            count++;
+            console.log("몸무게2 :"+weight);        
+            activel = active;
+        }
+        console.log(count+"일만에 다이어트 끝!"+activel);
+        alert(count+"일만에 다이어트 끝!");
+
+    </script>
+</body>
+</html>

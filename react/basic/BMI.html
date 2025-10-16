@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI 테스트</title>
+    <style>
+        #oneWrap{margin-bottom: 50px;}
+        input{display: block;}
+        button{margin: 20px 0;}
+    </style>
+
+</head>
+<body>
+    <div id="oneWrap">
+        <h2>BMI 계산</h2>
+        <div id="inputBox">
+            <label for="height">신장 (cm)</label>
+            <input type="text" name="height" id="height">
+            <!-- input type="number" name="height" id="height" placehold="키(cm)" -->
+
+            <label for="weight">체중 (kg)</label>
+            <input type="text" name="weight" id="weight">
+            <!-- input type="number" name="weight" id="weight" placehold="몸무게(kg)" -->
+        </div>
+        
+        <button id="bmiBt">계산하기</button>
+        
+        
+        <div id="result"></div>
+    </div>    
+
+    <div id="twoWrap">
+        
+        <h2>출생년도 계산</h2>
+        <label for="day">현재년도 : </label>
+        <input type="number" id="crday" readonly value="2025">
+
+        <label for="day">출생년도 : </label>
+        <input type="number" id="dtday" placeholder="(예) : 2002 ">
+
+        <button id="dayBt">나이출력</button>
+
+        <div id="result2"></div>
+    </div>
+    
+    
+
+
+    <script>
+
+        const bmiBt = document.getElementById("bmiBt");
+
+
+       bmiBt.onclick = () => {
+        // let gender = document.querySelector("input[name='gender']:checked").value;
+        let height = document.getElementById("height").value;
+        let weight = document.getElementById("weight").value;       
+        
+        if (!height || !weight){
+            document.getElementById("result").textContent = "신장과 체중을 모두 입력해주세요."
+            return;
+        }
+
+
+        
+        let bmi = weight/((height/100)*(height/100));
+        let bmiText = (`당신의 신체질량지수(BMI)는 ${bmi}(으)로 정상입니다`);
+
+        if(bmi <= 18.5){
+            bmiText = (`당신의 신체질량지수(BMI)는 ${bmi}(으)로 저체중입니다`)
+        }else if(bmi >= 25){
+            bmiText = (`당신의 신체질량지수(BMI)는 ${bmi}(으)로 정상입니다`)
+        }else if(bmi >= 25){
+            bmiText = (`당신의 신체질량지수(BMI)는 ${bmi}(으)로 비만전단계입니다`)
+        }else if(bmi >= 30){
+            bmiText = (`당신의 신체질량지수(BMI)는 ${bmi}(으)로 1단계 비만입니다`)
+        }else if(bmi >= 30){
+            bmiText = (`당신의 신체질량지수(BMI)는 ${bmi}(으)로 1단계 비만입니다`)
+        }else if(bmi >= 34){
+            bmiText = (`당신의 신체질량지수(BMI)는 ${bmi}(으)로 2단계 비만입니다`)
+        }else if(bmi > 35){
+            bmiText = (`당신의 신체질량지수(BMI)는 ${bmi}(으)로  초고도비만입니다`)
+        }
+
+
+
+        console.log(bmiText);
+        document.getElementById("result").innerText = bmiText;
+        
+       };
+
+
+        // 문제풀이
+
+        // function calculateBMI(){
+
+        // const heightCm = parseFloat(document.getElementById("height").value);
+        // const weightCm = parseFloat(document.getElementById("weight").value);
+
+        // if (!heightCm || !weightKg){
+        //     document.getElementById("result").textContent = "신장과 체중을 모두 입력해주세요."
+        //     return;
+        // }
+
+        // const heightTM = heightCm / 100;
+        // const bmi = (weightKg / (heightTM * heightTM).toFixed(1)); // toFixed()
+        
+        // let category ="";
+        // if (bmi<18.5) category = "저체중";
+        // else if (bmi<23) category = "정상"; 
+        // else if (bmi<25) category = "과체중";
+        // else category = "비만"
+
+        // document.getElementById("result").textContent = (`BMI : ${bmi} (${category})`);
+
+        //   };
+
+
+        dayBt.onclick = () => {
+            
+            const current = document.getElementById("crday").value;
+            const birthday = document.getElementById("dtday").value;
+
+            if (!current || !birthday){
+                document.getElementById("result2").textContent = "출생년도를 입력해주세요."
+                return;
+            };
+
+            let category="";
+            if(birthday <= 2006){
+                category = "성년";
+            } else category = "";
+
+            age = current - birthday + 1;
+
+            document.getElementById("result2").textContent = (`당신의 나이는 ${category} ${age} 세 입니다.`);
+
+        }
+
+
+    </script>
+</body>
+</html>
